@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+      *{margin: 0;padding: 0;}
+      .container{}
+    </style>
+</head>
+<body>
+  <div class="container">
+    <label for="num">请输入一个数字</label><input type="text" name="num" id="num">
+    <div id="info">请输入斐波那契数的序号</div>
+  </div>
+  <script>
+    var input = document.getElementById("num")
+    var info = document.getElementById("info")
+    input.onblur = function () {
+      var a = parseInt(this.value)
+      if(!isNaN(this.value)&&a==this.value){
+          if(a<1||a>1000){
+              info.innerHTML = "输入超出范围或不合法"
+          }else{
+              info.innerHTML = "第 "+a+" 个斐波那契数是"+fibs[a-1]
+          }
+      } else if(this.value.length <= 0){
+          info.innerHTML = "请输入斐波那契数的序号"
+      } else{
+          info.innerHTML = "输入超出范围或不合法"
+      }
+    }
+    <!--计算Fibonacci-->
+    var fibs = [1,1]
+    for(let i=2;i<1005;i++){
+      let a = fibs[i-1] + fibs[i-2]
+      fibs.push(a)
+    }
+    console.log(fibs[999])
+  </script>
+</body>
+</html>

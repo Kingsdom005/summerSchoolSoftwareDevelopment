@@ -32,12 +32,15 @@
       }
     }
     <!--计算Fibonacci-->
+    const t0 = performance.now();
     var fibs = [1,1]
     for(let i=2;i<1005;i++){
       let a = fibs[i-1] + fibs[i-2]
       fibs.push(a)
     }
     console.log(fibs[999])
+    const t1 = performance.now();
+    console.log(t1 - t0, 'milliseconds');
   </script>
 </body>
 </html>

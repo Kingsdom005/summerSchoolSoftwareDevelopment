@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟网站</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+      *{margin: 0;padding: 0;}
+      ul li{list-style: none;}
+      a{text-decoration: none;color: #999999;}
+      .pointer{cursor: pointer;}
+      body{width: 100%;height: 100%;background: #F2F3F5;}
+      .container{background: #F2F3F5;width: 100%;height: 100%;}
+      nav{height: 70px;width: 100%;background: #FF6600;position: relative;line-height: 70px;}
+      nav>div{width: 980px;margin: 0 auto;}
+      .nav-l{float: left;display: flex;flex-direction: row;}
+      .nav-l>img{margin-right: 10px;}
+      .nav-l>ul{position: relative;}
+      .nav-l>ul>li{color: #ededed;float: left;margin-left: 30px;}
+      .nav-l>ul>li:hover{cursor: pointer;color: white;}
+      .nav-r{float: right;color: white;}
+
+      .m{height: 60px;background: white;border-bottom: 1px solid #dddddd;}
+      .m>div{width: 200px;margin: 0 auto;line-height: 60px;}
+
+      .content{width: 980px;margin:10px auto 0 auto;}
+      .tmp{width: 100%;height: 100px;background: #FFF;border-bottom: #dddddd 2px solid;display: flex;flex-direction: row; box-sizing: border-box;padding-top: 30px;}
+      .tmp>span:nth-of-type(1){width: 50px;height: 50px;line-height: 50px;text-align: center;}
+      
+      @media screen and (max-width: 767px) {
+          nav>div{width: 100%;}
+          .content{width: 100%;}
+      }
+      
+    </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+        <div>
+            <div class="nav-l">
+                <img alt="" src="img/1.png" style="width: 40px;height: 40px;position: relative;top: 15px;">
+                <ul>
+                    <li>Top</li>
+                    <li>New</li>
+                    <li>Show</li>
+                    <li>Ask</li>
+                    <li>Jobs</li>
+                </ul>
+            </div>
+            <div class="nav-r pointer">Build with Vue.js</div>
+        </div>
+    </nav>
+    <div class="m">
+        <div><span class="pointer" style="color:#aaaaaa;" id="l">&lt; prev</span>&nbsp;&nbsp;1/25&nbsp;&nbsp;<span id="r" class="pointer">more &gt;</span></div>
+        <script>
+            document.getElementById("l").onclick = function () {
+                alert("左移")
+            }
+            document.getElementById("r").onclick=function () {
+                alert("右移")
+            }
+        </script>
+    </div>
+    <div class="content">
+        <div class="tmp">
+            <span style="color: orange;font-size: 24px;">9</span>
+            <span style="">
+                <span>I can’t believe that I can prove that it can sort <a href="#">(blog.adacore.com)</a></span><br>
+                <span>by Raphael_Amiard 3 hours ago | 23 comments</span>
+            </span>
+        </div>
+        <div class="tmp">
+            <span style="color: orange;font-size: 24px;">9</span>
+            <span style="">
+                <span>I can’t believe that I can prove that it can sort <a href="#">(blog.adacore.com)</a></span><br>
+                <span>by Raphael_Amiard 3 hours ago | 23 comments</span>
+            </span>
+        </div>
+        <div class="tmp">
+            <span style="color: orange;font-size: 24px;">9</span>
+            <span style="">
+                <span>I can’t believe that I can prove that it can sort <a href="#">(blog.adacore.com)</a></span><br>
+                <span>by Raphael_Amiard 3 hours ago | 23 comments</span>
+            </span>
+        </div>
+        <div class="tmp">
+            <span style="color: orange;font-size: 24px;">9</span>
+            <span style="">
+                <span>I can’t believe that I can prove that it can sort <a href="#">(blog.adacore.com)</a></span><br>
+                <span>by Raphael_Amiard 3 hours ago | 23 comments</span>
+            </span>
+        </div>
+        <div class="tmp">
+            <span style="color: orange;font-size: 24px;">9</span>
+            <span style="">
+                <span>I can’t believe that I can prove that it can sort <a href="#">(blog.adacore.com)</a></span><br>
+                <span>by Raphael_Amiard 3 hours ago | 23 comments</span>
+            </span>
+        </div>
+        <div class="tmp">
+            <span style="color: orange;font-size: 24px;">9</span>
+            <span style="">
+                <span>I can’t believe that I can prove that it can sort <a href="#">(blog.adacore.com)</a></span><br>
+                <span>by Raphael_Amiard 3 hours ago | 23 comments</span>
+            </span>
+        </div>
+        <div class="tmp">
+            <span style="color: orange;font-size: 24px;">9</span>
+            <span style="">
+                <span>I can’t believe that I can prove that it can sort <a href="#" style="color: #999999;">(blog.adacore.com)</a></span><br>
+                <span>by Raphael_Amiard 3 hours ago | 23 comments</span>
+            </span>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

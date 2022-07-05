@@ -33,7 +33,7 @@
           nav>div{width: 100%;}
           .content{width: 100%;}
           .tmp{position: relative;top: -10px;}
-          .tmp>span:nth-of-type(1){width: 20%;font-size: 10px;margin: 0;padding: 2% 2%;position: relative;top: -15px;}
+          .tmp>span:nth-of-type(1){width: 15%;font-size: 10px;margin: 0;padding: 2% 2%;position: relative;top: -15px;}
           .tmp>span:nth-of-type(2){width: 80%;font-size: 12px;margin: 0;padding: 2% 0;position: relative;top: -10px;}
       }
       
@@ -72,7 +72,7 @@
             <span class="passage-id">9999</span>
             <span>
                 <span>I can’t believe that I can prove that it can sort <a href="#">(blog.adacore.com)</a></span><br>
-                <span>by <span>Raphael_Amiard</span> 3 hours ago | <span>23</span> comments</span>
+                <span>by <span>Raphael_Amiard</span> <span>1</span> days ago | <span>23</span> comments</span>
             </span>
         </div>
 
@@ -95,8 +95,17 @@
                 newNode.style.display = "block"
                 newNode.firstElementChild.innerHTML = json["id"].toString()
                 newNode.lastElementChild.firstElementChild.innerHTML  = json["title"]
+                var a = json["url"].split('/')
+                // console.log(typeof json["url"])
+                // console.log(json["url"],a)
+                var newHost = document.createElement("span")
+                newHost.innerHTML = " ("+a[2]+") "
+                newHost.style.color = "#aaaaaa"
+                newNode.lastElementChild.firstElementChild.appendChild(newHost)
                 newNode.lastElementChild.lastElementChild.firstElementChild.innerHTML = json['by']
-                newNode.lastElementChild.lastElementChild.firstElementChild.nextSibling.innerHTML = json['descendants']
+                let passTime = parseInt((new Date().getTime()/1000-json['time'])/60,10)
+                newNode.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.innerHTML = passTime
+                newNode.lastElementChild.lastElementChild.lastElementChild.innerHTML = json['descendants']
                 box.appendChild(newNode)
             });
         }

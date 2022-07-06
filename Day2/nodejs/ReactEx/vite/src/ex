@@ -1,0 +1,44 @@
+import { useState } from 'react'
+import { useEffect } from 'react'
+import './index.css';
+function App() {
+  const data = [
+    {id:1,name:"Jack"},
+    {id:2,name:"Jackson"},
+    {id:3,name:"Jackddd"},
+    {id:4,name:"Jack111"},
+  ];
+  const [tasks,setTasks] = useState(data);
+  const [newTask,setNewTasks] = useState("");
+  function handleClick(event){
+    var newID = 0;
+    for (var idx in tasks){
+      if(newID < tasks[idx].id)
+        newID = tasks[idx].id;
+    }
+    newID++;
+    setTasks([...tasks,{id:newID,name:newTask}])
+  }
+  function handleDeleteTask(TaskID){
+    setTasks(tasks.filter(e=> e.id != TaskID))
+  }
+
+  useEffect(()=>{setNewTasks("");},[newTask])
+
+  return (
+    <div>
+      我的代办列表
+      <ul>
+        {tasks.map(item=>{
+          return (
+            <li key={item.id}>{item.id}-{item.name} <span onClick={()=>{handleDeleteTask(item.id)}}>x</span></li>
+          )
+        })}
+      </ul>
+      <input type="text" value={newTask} onChange={event=>{setNewTask(event.tasks.value)}}></input>
+      <button onClick={handleClick} placeholder="添加">添加</button>
+    </div>
+  )
+}
+
+export default App
